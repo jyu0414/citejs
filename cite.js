@@ -40,7 +40,7 @@ class Bibtex {
     loaded(){
         if ((this.httpObj.readyState == 4) && (this.httpObj.status == 200)) {
             this.resp = this.httpObj.responseText;
-            let r = /(@)([a-z]+)\{([^,]+),(([^=}]+)(=)[\s]*\{([^\}]+)\}{1}[,]?)+/g;
+            let r = /(@)([a-z]+)\{([^,]+),(([^=\}]+)(=)[\s]*[\{"']([^\}"']*)[\}"']{1}[,]?)+/g;
             this.articles = [];
             let m;
             while ((m = r.exec(this.resp)) != null) {
