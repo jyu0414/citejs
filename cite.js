@@ -7,7 +7,7 @@ class Article {
             this.type = m[1];
             this.tag = m[2];
         }
-        let r2 = /([^,\s\n]+)[\s]*=[\s]*\{([^\}]+)/g;
+        let r2 = /([^,\s\n]+)[\s]*=[\s]*[\{"']([^\}"']+)/g;
         this.properties = {};
         while ((m = r2.exec(bibtexArticle)) != null) {
             this.properties[m[1]] = m[2];
